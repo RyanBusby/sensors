@@ -24,13 +24,12 @@ def loop():
     mcp.output(3,1)     # turn on LCD backlight
     lcd.begin(16,2)     # set number of LCD lines and columns
     while(True):
-        #lcd.clear()
+        lcd.clear()
         for msg in ['this is one', 'heres another', 'and another', '....lastly']:
             lcd.setCursor(0,0)  # set cursor position
             lcd.message( msg )
             sleep(4)
-            lcd.begin(16,2)
-            lcd.setCursor(0,0)
+
 
 def destroy():
     lcd.clear()
