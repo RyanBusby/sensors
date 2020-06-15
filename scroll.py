@@ -14,7 +14,7 @@ def DisplayScrollingLeft(txt, lcd):
      lcd.message(txt[:16])
      lcd.setCursor(0, 1)
      lcd.message(datetime.now().strftime('%b %d  %H:%M:%S'))
-     time.sleep(0.5)
+     sleep(0.5)
      txt = txt[1:] + txt[0]
 
 PCF8574_address = 0x27
