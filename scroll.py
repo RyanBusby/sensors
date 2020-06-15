@@ -6,15 +6,15 @@ from time import sleep, strftime
 from datetime import datetime
 
 def DisplayScrollingLeft(txt, lcd):
-  # txt = txt.strip() + ' '
-  # if len(txt) < 17:
-  #   txt = txt + (16 * ' ' )
-  # while True:
+  txt = txt.strip() + ' '
+  if len(txt) < 17:
+    txt = txt + (16 * ' ' )
+  while True:
      lcd.setCursor(0, 0)
      lcd.message(txt[:16])
      lcd.setCursor(0, 1)
      lcd.message(datetime.now().strftime('%b %d  %H:%M:%S'))
-     sleep(0.5).move_left()
+     sleep(0.2)
      txt = txt[1:] + txt[0]
 
 PCF8574_address = 0x27
