@@ -20,5 +20,7 @@ def DisplayScrollingLeft(txt, lcd):
 PCF8574_address = 0x27
 mcp = PCF8574_GPIO(PCF8574_address)
 lcd = Adafruit_CharLCD(pin_rs=0, pin_e=2, pins_db=[4,5,6,7], GPIO=mcp)
+mcp.output(3,1)     # turn on LCD backlight
+lcd.begin(16,2)
 
 DisplayScrollingLeft('This scrolls to the left.', lcd)
