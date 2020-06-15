@@ -95,8 +95,8 @@ class Adafruit_CharLCD(object):
 
     def setCursor(self, col, row):
         self.row_offsets = [0x00, 0x40, 0x14, 0x54]
-        if row > self.numlines:
-            row = self.numlines - 1  # we count rows starting w/0
+        # if row > self.numlines:
+        #     row = self.numlines - 1  # we count rows starting w/0
         self.write4bits(self.LCD_SETDDRAMADDR | (col + self.row_offsets[row]))
 
     def noDisplay(self):
