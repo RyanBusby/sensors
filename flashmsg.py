@@ -25,7 +25,7 @@ def loop():
     lcd.begin(16,2)     # set number of LCD lines and columns
     while(True):
         #lcd.clear()
-        for msg in ['this is one', 'heres another', 'and another', '....lastly']
+        for msg in ['this is one', 'heres another', 'and another', '....lastly']:
             lcd.setCursor(0,0)  # set cursor position
             lcd.message( msg )
             sleep(4)
