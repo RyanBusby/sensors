@@ -13,7 +13,7 @@ def DisplayScrollingLeft(txt, lcd):
      lcd.setCursor(0, 0)
      lcd.message(txt[:16])
      lcd.setCursor(0, 1)
-     lcd.message(datetime.now().strftime('%b %d  %H:%M:%S'))
+     # lcd.message(datetime.now().strftime('%b %d  %H:%M:%S'))
      sleep(0.3)
      txt = txt[1:] + txt[0]
 
