@@ -30,6 +30,7 @@ def loop():    # turn on LCD backlight
             lcd.setCursor(0,0)  # set cursor position
             lcd.message( msg )
             sleep(4)
+            lcd.clear()
 
 
 def destroy():
