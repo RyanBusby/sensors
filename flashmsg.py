@@ -20,12 +20,13 @@ def get_cpu_temp():     # get CPU temperature and store it into file "/sys/class
 def get_time_now():     # get system time
     return datetime.now().strftime('    %H:%M:%S')
 
-def loop():
-    mcp.output(3,1)     # turn on LCD backlight
+def loop():    # turn on LCD backlight
+    mcp.output(3,1)
     lcd.begin(16,2)     # set number of LCD lines and columns
+
     while(True):
-        lcd.clear()
         for msg in ['this is one', 'heres another', 'and another', '....lastly']:
+
             lcd.setCursor(0,0)  # set cursor position
             lcd.message( msg )
             sleep(4)
