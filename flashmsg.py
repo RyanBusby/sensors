@@ -29,6 +29,7 @@ def loop():
             lcd.setCursor(0,0)  # set cursor position
             lcd.message( msg )
             sleep(4)
+            lcd.setCursor(0,0)
 
 def destroy():
     lcd.clear()
