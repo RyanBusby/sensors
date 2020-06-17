@@ -49,6 +49,7 @@ def loop():
             continue
         elif state()[8] == '0':
             wake()
+            time.sleep(20)
         time.sleep(.1)
 
 
@@ -60,7 +61,7 @@ def snooze():
     os.popen("tvservice -o")
 
 def state():
-    os.popen("tvservice -s")
+    return os.popen("tvservice -s").read()
 
 if __name__ == '__main__':     # Program entrance
     print ('Program is starting...')
