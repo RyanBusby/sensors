@@ -10,7 +10,7 @@ def snooze():
 
 if __name__ == "__main__":
     from time import sleep
-    while True()
+    while True:
         snooze()
         sleep(20)
         wake()
