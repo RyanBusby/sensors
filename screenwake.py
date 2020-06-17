@@ -7,11 +7,16 @@ def wake():
 def snooze():
     os.system("tvservice -o")
 
+def state():
+    os.system("tvservice -s")
+
 
 if __name__ == "__main__":
-    from time import sleep
-    while True:
-        snooze()
-        sleep(20)
-        wake()
-        sleep(20)
+    # from time import sleep
+    # while True:
+    #     snooze()
+    #     sleep(20)
+    #     wake()
+    #     sleep(20)
+
+    state()
