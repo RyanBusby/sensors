@@ -43,11 +43,7 @@ def loop():
     while(True):
         distance = getSonar() # get distance
         print ("The distance is : %.2f cm"%(distance))
-        if distance > 70:
-            continue
-        if state()[8] == 'a':
-            continue
-        elif state()[8] == '0':
+        if distance < 70 and state()[8] == 'a':
             wake()
             time.sleep(20)
         time.sleep(.1)
