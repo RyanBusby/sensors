@@ -26,9 +26,11 @@ def loop():
     while(True):
         #lcd.clear()
         lcd.setCursor(0,0)  # set cursor position
-        lcd.message( 'CPU: ' + get_cpu_temp()+'\n' ).leftToRight()# display CPU temperature
+        lcd.message( 'CPU: ' + get_cpu_temp()+'\n' )# display CPU temperature
         lcd.message( get_time_now() )   # display the time
-        sleep(1)
+        for i in range(len(25)):
+            sleep(1)
+            lcd.rightToLeft()
 
 def destroy():
     lcd.clear()
