@@ -30,7 +30,7 @@ def loop():
         lcd.message( get_time_now() )   # display the time
         for i in range(25):
             sleep(1)
-            lcd.rightToLeft()
+            lcd.move_left()
 
 def destroy():
     lcd.clear()
