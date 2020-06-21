@@ -5,10 +5,11 @@ from datetime import datetime
 from flask import Flask, render_template, request, redirect, jsonify, url_for, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-
+pword = os.getenv('birdhouse_pword')
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres@localhost:5432/birdhouse'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:{}@localhost:5432/birdhouse'.format(pword)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
