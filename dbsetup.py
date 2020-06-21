@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 pword = os.getenv('birdhouse_pword')
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:{}@localhost:5432/birdhouse'.format(pword)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://pi:920067@localhost:5432/birdhouse'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
