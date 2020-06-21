@@ -1,4 +1,6 @@
-import sys, datetime
+import sys
+
+from datetime import datetime
 
 from flask import Flask, render_template, request, redirect, jsonify, url_for, abort
 from flask_sqlalchemy import SQLAlchemy
