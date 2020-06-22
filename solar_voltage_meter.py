@@ -1,6 +1,6 @@
 import Adafruit_ADS1x15
 
-object SolarVoltage():
+class SolarVoltage():
     def __init__(self):
         self.adc = Adafruit_ADS1x15.ADS1115()
 
