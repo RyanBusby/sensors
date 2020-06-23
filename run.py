@@ -3,7 +3,7 @@ from datetime import datetime as dt
 
 from infared_meter import IR
 from temp_humid_meter import TempHumid
-from solar_voltage import SolarVoltage
+from solar_voltage_meter import SolarVoltage
 from dbsetup import Temp, Humid, Infared, SolarVolts, db
 
 ir = IR(13, 16)
