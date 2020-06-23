@@ -10,7 +10,7 @@ class Infared():
         GPIO.setup(led_pin, GPIO.OUT)
 
     def read(self):
-        GPIO.cleanup()
+        # GPIO.cleanup()
         if GPIO.input(self.ir_pin) == GPIO.HIGH:
             GPIO.output(self.led_pin, GPIO.HIGH)
             return True
