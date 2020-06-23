@@ -2,6 +2,9 @@ import RPi.GPIO as GPIO
 
 class Infared():
     def __init__(self, ir_pin, led_pin):
+        self.ir_pin = ir_pin
+        self.led_pin = led_pin
+
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(ir_pin, GPIO.IN)
         GPIO.setup(led_pin, GPIO.OUT)
