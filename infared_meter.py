@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-class Infared():
+class IR():
     def __init__(self, ir_pin, led_pin):
         self.ir_pin = ir_pin
         self.led_pin = led_pin
