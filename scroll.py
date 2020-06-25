@@ -1,7 +1,7 @@
 ########################################################################
 from PCF8574 import PCF8574_GPIO
 from Adafruit_LCD1602 import Adafruit_CharLCD
-from db setup import db, Temp, Humid, Infared, SolarVolts
+from dbsetup import db, Temp, Humid, Infared, SolarVolts
 from time import sleep, strftime
 from datetime import datetime
 
