@@ -20,18 +20,16 @@ def getMessage():
         msg = "Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Vacant".format(ts, temperature, humidity, solar_input)
     return msg
 
-# def DisplayScrollingLeft(txt, lcd):
-#     counter = 0
-#     while True:
-#         lcd.setCursor(0, 0)
-#         lcd.message(txt)
-#         lcd.setCursor(0, 1)
-#      # lcd.message(datetime.now().strftime('%b %d  %H:%M:%S'))
-#         sleep(.175)
-#         txt = txt[1:] + txt[0]
-#         counter += 1
-#         if counter == len(txt):
-#             txt = getMessage()
+def DisplayScrollingLeft(txt, lcd):
+    counter = 0
+    for x in range(len(txt)):
+        lcd.setCursor(0, 0)
+        lcd.message(txt)
+        lcd.setCursor(0, 1)
+     # lcd.message(datetime.now().strftime('%b %d  %H:%M:%S'))
+        sleep(.175)
+        txt = txt[x+1:] + ' '
+    return
 
 
 
@@ -44,6 +42,5 @@ lcd.begin(16,1)
 while True:
     msg = getMessage()
     print(msg)
-    lcd.message(msg).DisplayLeft()
+    DisplayScrollingLeft(msg, lcd)
     # print(msg)
-    db.refresh()
