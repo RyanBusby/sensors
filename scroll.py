@@ -1,9 +1,21 @@
 ########################################################################
 from PCF8574 import PCF8574_GPIO
 from Adafruit_LCD1602 import Adafruit_CharLCD
-
+from db setup import db, Temp, Humid, Infared, SolarVolts
 from time import sleep, strftime
 from datetime import datetime
+
+
+def getMessage():
+    temperature = Temp.query.all()[-1].value
+    humidity = Humid.query.all()[-1].value
+    solar_input = SolarVolts.query.all()[-1].value
+    vacancy = Infared.query.all()[-1].value
+    if vacancy:
+        msg = "Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Vacant".format(temperature, humidity, solar_input)
+    else:
+        msg = "Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Vacant".format(temperature, humidity, solar_input)
+    return msg
 
 def DisplayScrollingLeft(txt, lcd):
   txt = txt.strip() + ' '
@@ -23,4 +35,5 @@ lcd = Adafruit_CharLCD(pin_rs=0, pin_e=2, pins_db=[4,5,6,7], GPIO=mcp)
 mcp.output(3,1)     # turn on LCD backlight
 lcd.begin(16,1)
 
-DisplayScrollingLeft('This scrolls to the left.', lcd)
+while True:
+    DisplayScrollingLeft(getMessage(), lcd)
