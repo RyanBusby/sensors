@@ -17,7 +17,7 @@ def getMessage():
     if occupied:
         msg = "TS: {} Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Occupied  ".format(ts, temperature, humidity, solar_input)
     else:
-        msg = "Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Vacant".format(ts, temperature, humidity, solar_input)
+        msg = "TS: {} Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Vacant".format(ts, temperature, humidity, solar_input)
     return msg
 
 def DisplayScrollingLeft(txt, lcd):
