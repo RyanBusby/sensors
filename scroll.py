@@ -10,11 +10,14 @@ def getMessage():
     temperature = Temp.query.all()[-1].value
     humidity = Humid.query.all()[-1].value
     solar_input = SolarVolts.query.all()[-1].value
-    vacancy = Infared.query.all()[-1].value
-    if vacancy:
-        msg = "Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Vacant".format(temperature, humidity, solar_input)
+    IR = Infared.query.all()[-1]
+    occupied = IR.value
+    ts = IR.timestamp
+
+    if occupied:
+        msg = "TS: {} Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Occupied  ".format(ts, temperature, humidity, solar_input)
     else:
-        msg = "Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Vacant".format(temperature, humidity, solar_input)
+        msg = "Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Vacant".format(ts, temperature, humidity, solar_input)
     return msg
 
 def DisplayScrollingLeft(txt, lcd):
