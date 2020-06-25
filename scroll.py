@@ -39,5 +39,7 @@ mcp.output(3,1)     # turn on LCD backlight
 lcd.begin(16,1)
 
 while True:
-    DisplayScrollingLeft(getMessage(), lcd)
+    msg = getMessage()
+    DisplayScrollingLeft(msg, lcd)
+    print(msg)
     db.refresh()
