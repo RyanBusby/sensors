@@ -40,6 +40,7 @@ lcd.begin(16,1)
 
 while True:
     msg = getMessage()
-    DisplayScrollingLeft(msg, lcd)
     print(msg)
+    DisplayScrollingLeft(msg, lcd)
+    # print(msg)
     db.refresh()
