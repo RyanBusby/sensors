@@ -7,12 +7,15 @@ from datetime import datetime
 
 
 def getMessage():
+    print('take new readings')
     temperature = Temp.query.all()[-1].value
     humidity = Humid.query.all()[-1].value
     solar_input = SolarVolts.query.all()[-1].value
     IR = Infared.query.all()[-1]
     occupied = IR.value
     ts = IR.timestamp
+    print('done take new readings')
+    print(ts)
 
     if occupied:
         msg = "TS: {} Temperature: {}   Humidity: {}   Solar Input: {}   Birdhouse is Occupied  ".format(ts, temperature, humidity, solar_input)
@@ -21,7 +24,6 @@ def getMessage():
     return msg
 
 def DisplayScrollingLeft(txt, lcd):
-    counter = 0
     for x in range(len(txt)):
         lcd.setCursor(0, 0)
         lcd.message(txt)
@@ -44,4 +46,3 @@ while True:
     print(msg)
     DisplayScrollingLeft(msg, lcd)
     # print(msg)
-    db.refresh()
