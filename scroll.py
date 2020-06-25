@@ -44,6 +44,6 @@ lcd.begin(16,1)
 while True:
     msg = getMessage()
     print(msg)
-    lcd.DisplayLeft(msg, lcd)
+    lcd.message(msg).DisplayLeft()
     # print(msg)
     db.refresh()
