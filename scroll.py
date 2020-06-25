@@ -21,16 +21,17 @@ def getMessage():
     return msg
 
 def DisplayScrollingLeft(txt, lcd):
-  txt = txt.strip() + ' '
-  if len(txt) < 17:
-    txt = txt + (16 * ' ' )
-  while True:
-     lcd.setCursor(0, 0)
-     lcd.message(txt[:16])
-     lcd.setCursor(0, 1)
+    counter = 0
+    while True:
+        lcd.setCursor(0, 0)
+        lcd.message(txt)
+        lcd.setCursor(0, 1)
      # lcd.message(datetime.now().strftime('%b %d  %H:%M:%S'))
-     sleep(.175)
-     txt = txt[1:] + txt[0]
+        sleep(.175)
+        txt = txt[1:] + txt[0]
+        counter += 1
+        if counter == len(txt):
+            txt = getMessage()
 
 PCF8574_address = 0x27
 mcp = PCF8574_GPIO(PCF8574_address)
