@@ -44,3 +44,4 @@ while True:
     print(msg)
     DisplayScrollingLeft(msg, lcd)
     # print(msg)
+    db.refresh()
