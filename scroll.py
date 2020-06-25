@@ -40,3 +40,4 @@ lcd.begin(16,1)
 
 while True:
     DisplayScrollingLeft(getMessage(), lcd)
+    db.refresh()
